@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import authRouter from "./routes/auth.route.js";
 dotenv.config();
 
 mongoose
@@ -19,9 +20,8 @@ app.listen(3000, () => {
   console.log("Server is running on port 3000!");
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+// app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
