@@ -2,7 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.route.js";
+import userRouter from "./routes/user.route.js";
 import cookieParser from "cookie-parser";
+import { verifyToken } from "./utils/verifyUser.js";
 
 dotenv.config();
 
@@ -24,6 +26,7 @@ app.listen(3000, () => {
 });
 
 // app.use("/api/user", userRouter);
+app.use("/api/user", verifyToken, userRouter);
 app.use("/api/auth", authRouter);
 
 app.use((err, req, res, next) => {
