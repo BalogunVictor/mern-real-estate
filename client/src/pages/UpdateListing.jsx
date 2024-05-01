@@ -37,8 +37,8 @@ export default function UpdateListing() {
   useEffect(() => {
     const fetchListing = async () => {
       const listingId = params.listingId;
-      const res = await fetchListing(`/api/listing/get/${listingId}`);
-      const data = res.json();
+      const res = await fetch(`/api/listing/get/${listingId}`);
+      const data = await res.json();
       if (data.success === false) {
         console.log(data.message);
         return;
@@ -46,7 +46,7 @@ export default function UpdateListing() {
       setFormData(data);
     };
     fetchListing();
-  }, []);
+  }, [params.listingId]);
 
   const handleImageSubmit = () => {
     setUploading(true);
