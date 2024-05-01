@@ -137,6 +137,7 @@ export default function UpdateListing() {
       });
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
