@@ -22,7 +22,7 @@ export default function Header() {
     if (searchTermFromUrl) {
       setSearchTerm(searchTermFromUrl);
     }
-  }, [location.search]);
+  }, [window.location.search]);
 
   return (
     <header className="bg-slate-200 shadow-md">
@@ -58,15 +58,15 @@ export default function Header() {
               About
             </li>
           </Link>
-          <Link to="/sign-in">
+          <Link to="/profile">
             {currentUser ? (
               <img
                 className="rounded-full h-7 w-7 object-cover"
                 src={currentUser.avatar}
-                alt="profile "
+                alt="profile"
               />
             ) : (
-              <li className="text-slate-700 hover:underline">Sign in</li>
+              <li className=" text-slate-700 hover:underline"> Sign in</li>
             )}
           </Link>
         </ul>
