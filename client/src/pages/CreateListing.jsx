@@ -253,7 +253,7 @@ export default function CreateListing() {
               <input
                 type="number"
                 className="p-3 border border-gray-300 rounded-lg"
-                id="bedrooms"
+                id="bathrooms"
                 min="1"
                 max="10"
               />
