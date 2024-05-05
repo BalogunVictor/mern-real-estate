@@ -22,7 +22,7 @@ export default function Header() {
     if (searchTermFromUrl) {
       setSearchTerm(searchTermFromUrl);
     }
-  }, []);
+  }, [location.search]);
 
   return (
     <header className="bg-slate-200 shadow-md">
@@ -40,6 +40,7 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search..."
+            value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="bg-transparent focus:outline-none w-24 sm:w-64"
           />
