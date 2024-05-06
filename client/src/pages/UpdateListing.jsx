@@ -262,7 +262,7 @@ export default function UpdateListing() {
                 max="10"
                 required
                 onChange={handleChange}
-                checked={formData.bedrooms}
+                value={formData.bedrooms}
               />
               <p>Beds</p>
             </div>
@@ -273,6 +273,7 @@ export default function UpdateListing() {
                 id="bathrooms"
                 min="1"
                 max="10"
+                value={formData.bathrooms}
               />
               <p>Baths</p>
             </div>
@@ -301,6 +302,7 @@ export default function UpdateListing() {
                   id="discountedPrice"
                   min="0"
                   max="1000000"
+                  value={formData.discountedPrice}
                 />
                 <div>
                   <p>Discounted Price</p>
