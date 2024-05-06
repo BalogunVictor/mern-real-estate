@@ -152,7 +152,7 @@ export default function UpdateListing() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, userRef: currentUser._id }),
       });
-      const data = res.json();
+      const data = await res.json();
       setLoading(false);
       if (data.success === false) {
         setError(data.message);
