@@ -5,8 +5,7 @@ import mongoose from "mongoose";
 import authRouter from "./routes/auth.route.js";
 import userRouter from "./routes/user.route.js";
 import listingRouter from "./routes/listing.route.js";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
+import path from "path";
 
 dotenv.config();
 
@@ -34,10 +33,10 @@ app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
-app.use(express.static(join(__dirname, "/client/dist")));
+app.use(express.static(path.join(__dirname, "/client/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(join(__dirname, "../../client", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
 app.use((err, req, res, next) => {
