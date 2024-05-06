@@ -26,6 +26,10 @@ const listingSchema = new mongoose.Schema(
       type: "String",
       required: true,
     },
+    bedrooms: {
+      type: "String",
+      required: true,
+    },
     furnished: {
       type: "String",
       required: true,
