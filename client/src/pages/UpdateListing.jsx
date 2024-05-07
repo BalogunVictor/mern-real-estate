@@ -143,7 +143,7 @@ export default function UpdateListing() {
     try {
       if (formData.imageUrls.length < 1)
         return setError("You must upload at least one image");
-      if (+formData.regularPrice < +formData.discountPrice)
+      if (+formData.regularPrice < +formData.discountedPrice)
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
@@ -273,6 +273,7 @@ export default function UpdateListing() {
                 id="bathrooms"
                 min="1"
                 max="10"
+                onChange={handleChange}
                 value={formData.bathrooms}
               />
               <p>Baths</p>
