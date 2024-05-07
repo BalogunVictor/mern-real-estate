@@ -24,7 +24,7 @@ export default function UpdateListing() {
     bedrooms: 1,
     bathrooms: 1,
     regularPrice: 0,
-    discountPrice: 0,
+    discountedPrice: 0,
     offer: false,
     parking: false,
     furnished: false,
